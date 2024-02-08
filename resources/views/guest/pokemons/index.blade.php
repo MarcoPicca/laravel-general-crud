@@ -7,6 +7,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3 mb-3">
                     @foreach ($pokemons as $pokemon)
                         <div class="col">
+                            <a href="{{ route('guest.pokemons.show', $pokemon->id) }}">
                                 <div class="card">
                                     <img src="{{ $pokemon->thumb }}" alt="{{ $pokemon->title }} picture">
                                     <div class="card-body">
@@ -30,6 +31,7 @@
                                         </p>
                                     </div>
                                 </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
