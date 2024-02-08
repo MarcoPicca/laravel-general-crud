@@ -14,12 +14,11 @@ return new class extends Migration
         Schema::create('pokemons', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->text('thumb')->nullable();
-            // $table->text('description');
-            // $table->integer('no');
-            // $table->string('type');
-            // $table->string('weakness');
-            // $table->string('strength');
+            $table->text('description');
+            $table->integer('no');
+            $table->string('type');
+            $table->string('weakness');
+            $table->string('strength');
             $table->timestamps();
         });
     }
