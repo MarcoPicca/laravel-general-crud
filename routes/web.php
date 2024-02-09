@@ -14,9 +14,12 @@ use App\Http\Controllers\Guest\PokemonController as GuestPokemonController;
 |
 */
 
-Route::get('/', function () { return view('layouts.app'); });
+Route::get('/', function () {
+    return view('layouts.app');
+});
 
 Route::get('/pokemons', [GuestPokemonController::class, 'index'])->name('guest.pokemons.index');
 Route::get('/pokemons/{pokemon}', [GuestPokemonController::class, 'show'])->name('guest.pokemons.show');
 Route::get('/pokemons/create', [GuestPokemonController::class, 'create'])->name('guest.pokemons.create');
 Route::get('/pokemons/{pokemon}/edit', [GuestPokemonController::class, 'edit'])->name('guest.pokemons.edit');
+Route::put('/pokemons/{pokemon}', [GuestPokemonController::class, 'update'])->name('guest.pokemons.update');

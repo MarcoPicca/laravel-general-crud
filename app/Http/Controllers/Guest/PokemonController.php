@@ -26,21 +26,28 @@ class PokemonController extends Controller
         return view('guest.pokemons.create');
     }
 
-
-
-
-
-
-
-
-
-
-
-    
     public function edit(Pokemon $pokemon)
     {
         return view('guest.pokemons.edit', compact('pokemon'));
     }
+    public function update(Request $request, Pokemon $pokemon)
+    {
 
+        $data = $request->all();
 
+        // $pokemon = Pokemon::findOrFail($id);
+
+        $pokemon->name = $data['title'];
+        $pokemon->thumb = $data['thumb'];
+        $pokemon->description = $data['description'];
+        $pokemon->no = $data['no'];
+        $pokemon->type = $data['type'];
+        $pokemon->weakness = $data['weakness'];
+        $pokemon->strength = $data['strength'];
+        $pokemon->save();
+
+        // $pokemon->update($data);
+
+        return redirect()->route('guest.pokemons.show', $pokemon->id);
+    }
 }
