@@ -25,4 +25,22 @@ class PokemonController extends Controller
     {
         return view('guest.pokemons.create');
     }
+
+
+
+
+
+
+
+
+
+
+
+    
+    public function edit(Pokemon $pokemon)
+    {
+        return view('guest.pokemons.edit', compact('pokemon'));
+    }
+
+
 }
