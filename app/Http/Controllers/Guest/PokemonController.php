@@ -15,6 +15,10 @@ class PokemonController extends Controller
         return view('guest.pokemons.index', compact('pokemons'));
     }
 
-    
+    public function show(Pokemon $pokemon)
+    {
+        // $pokemon = Pokemon::findOrFail($id);
+        return view('guest.pokemons.show', compact('pokemon'));
+    }
   
 }
